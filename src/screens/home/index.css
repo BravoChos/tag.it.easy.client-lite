@@ -1,0 +1,22 @@
+.Container {
+  text-align: center;
+}
+
+.header {
+  align-items: center;
+  background-color: white;
+  height: 1.2em;
+  padding: 1em;
+}
+.logo-home img {
+  width: 9em;
+}
+.logout-button {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: rgb(23, 73, 179);
+  background-color: rgba(224, 224, 224, 1);
+  border: none;
+  background: transparent;
+  float: right;
+}
