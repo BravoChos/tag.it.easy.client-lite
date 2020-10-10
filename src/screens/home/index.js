@@ -1,19 +1,21 @@
-import React, { Component } from "react";
-
+import React from "react";
+import { Search } from "../../components/icons";
+import "./index.css";
 export const Home = () => {
   return (
     <div className="Container">
       <header className="header">
-        <div className="logo-home">
-          <img src={require("../../assets/img/logo.png")} alt="ss" />
-        </div>
-        <div>
-          <div
-            onClick={(e) => {
-              this.logout(e);
-            }}
-          >
-            <button className="logout-button">LogOut</button>
+        <img src={require("../../assets/img/logo.png")} alt="logo" />
+
+        <div className="search__container">
+          <input
+            className="searchInput"
+            type="text"
+            placeholder="Search Tag or type a url"
+            // onChange={this.props.desChange}
+          />
+          <div className="searchBar">
+            <Search size={"2em"} />
           </div>
         </div>
       </header>

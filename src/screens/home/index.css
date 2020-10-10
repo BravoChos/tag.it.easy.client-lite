@@ -1,22 +1,44 @@
 .Container {
-  text-align: center;
+  /* text-align: center; */
+  padding: 0 20vw;
+  border: 1px solid black;
 }
 
 .header {
-  align-items: center;
+  text-align: flex-start;
+  display: flex;
+  flex-direction: row;
   background-color: white;
-  height: 1.2em;
-  padding: 1em;
+  height: 10em;
+  padding: 2em 1em;
+  border: 1px solid black;
 }
-.logo-home img {
-  width: 9em;
+.header img {
+  /* width: 9em; */
+  height: 4em;
+  border: 1px solid black;
 }
-.logout-button {
-  font-size: 0.8em;
-  font-weight: 700;
-  color: rgb(23, 73, 179);
-  background-color: rgba(224, 224, 224, 1);
-  border: none;
-  background: transparent;
-  float: right;
+.search__container {
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+  margin: 0 30px;
+}
+.searchInput {
+  height: 4em;
+  min-width: 39em;
+  border: 2px solid black;
+  border-color: rgb(23, 73, 179);
+
+  padding: 0 20px;
+  /* border-radius: 0.5em; */
+}
+
+.searchBar {
+  background-color: rgb(23, 73, 179);
+  /* border-color: rgb(23, 73, 179; */
+  justify-content: center;
+  text-align: center;
+  width: 3.6em;
+  height: 3.6em;
 }
