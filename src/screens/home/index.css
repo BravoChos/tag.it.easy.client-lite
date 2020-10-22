@@ -36,7 +36,83 @@
 
 .tagGenerator {
   background-color: rgb(23, 73, 179);
-  height: 14em;
+  /* height: 14em; */
   padding: 2em 20vw;
   /* border: 3px solid black; */
+  display: flex;
+  flex-direction: row;
 }
+.tagGenerator__container {
+  flex: 1;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* border: 1px solid black; */
+  padding: 0 1em;
+}
+.label {
+  /* border: 3px solid black; */
+  color: white;
+  /* min-width: 2.2em; */
+  /* min-width: 3em; */
+  margin-right: 0.5em;
+  font-weight: 300;
+  /* padding: 0 .5em 0 0; */
+}
+.input {
+  width: 100%;
+  height: 2.5em;
+  padding: 0 1em;
+  /* margin-left: 1em; */
+}
+
+.bookmarkWrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+  padding: 8px 0px;
+
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.tagAndTitleWrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+.titleWrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+  padding: 8px 0px;
+  width: 100%;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+.save__button {
+  width: 4em;
+  /* height: 5em; */
+  height: 4em;
+  border: rgb(255, 174, 0);
+  border-radius: 2px;
+  background-color: rgb(255, 174, 0);
+  font-size: 1.5em;
+  margin: 8px 0;
+  color: white;
+  font-weight: 300;
+  /* text-align: center; */
+  box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.199);
+}
+.add__button {
+  height: 2.9em;
+  margin: 0 10px;
+  border: rgb(255, 174, 0);
+  border-radius: 2px;
+  background-color: rgb(255, 174, 0);
+  color: white;
+  font-weight: 600;
+}
+/* .app-button-white p {
+  margin: 0;
+  font-weight: 700;
+} */

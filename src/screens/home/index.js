@@ -2,7 +2,6 @@ import React from "react";
 import { SearchBox } from "../../components/icons";
 import "./index.css";
 export const Home = () => {
-
   return (
     <div className="Container">
       <header className="header">
@@ -21,12 +20,51 @@ export const Home = () => {
       </header>
 
       <div className="tagGenerator">
-        <div className="tagGenerator__tagInput">
-          <p>Hello Welcome to Tag it easy!!</p>
+        <div className="tagGenerator__container">
+          <div className="bookmarkWrapper">
+            <div className="label">URL</div>
+            <input
+              className="input"
+              type="text"
+              name="url"
+              placeholder="Place your URL here!"
+              // onChange={this.props.urlChange}
+            />
+          </div>
+          <div className="tagAndTitleWrapper">
+            <div className="bookmarkWrapper">
+              <div className="label">TAG</div>
+              <input
+                className="input"
+                type="text"
+                name="url"
+                placeholder="Add Tag"
+                // onChange={this.props.urlChange}
+              />
+              <button className="add__button">Add</button>
+            </div>
+            <div className="titleWrapper">
+              <div className="label">TITLE</div>
+              <input
+                className="input"
+                type="text"
+                name="url"
+                placeholder="Place your Title here!"
+                // onChange={this.props.urlChange}
+              />
+            </div>
+          </div>
         </div>
-        <div id="user">
-          <p>Hello Welcome to Tag it easy!!</p>
-        </div>
+
+        <button
+          className="save__button"
+          onClick={() => {
+            // this.props.submitNewURL();
+            console.log("hi");
+          }}
+        >
+          Save
+        </button>
       </div>
     </div>
   );
