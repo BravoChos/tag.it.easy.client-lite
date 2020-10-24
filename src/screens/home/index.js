@@ -1,5 +1,6 @@
 import React from "react";
 import { SearchBox } from "../../components/icons";
+import { TagCard } from "../../components/cards";
 import "./index.css";
 export const Home = () => {
   return (
@@ -56,7 +57,7 @@ export const Home = () => {
           </div>
           <div className="bookmarkWrapper">
             <div className="label">#YourTags</div>
-            <div className='tag'>IamSuperCool</div>
+            <div className="tag">#IamSuperCool</div>
           </div>
         </div>
 
@@ -69,6 +70,20 @@ export const Home = () => {
         >
           Save
         </button>
+      </div>
+
+      <div className="tagContainer">
+        <div className="tagFilterWrapper">
+          <div className="tagCard">sdfsdf</div>
+          <div className="tagCard">sdfsdf</div>
+          <div className="tagCard">sdfsdf</div>
+          <div className="tagCard">sdfsdf</div>
+        </div>
+        <div className="tagCardWrapper">
+          <TagCard />
+          <TagCard />
+          <TagCard />
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,42 @@
+.tagCard {
+  /* border: 1px solid black; */
+  background-color: white;
+  border-radius: 2px;
+  /* margin: 10px 0; */
+  padding: 1em;
+  margin: 1em;
+}
+
+.tagCard__title {
+  display: flex;
+  flex-direction: row;
+  /* height: 1.5em; */
+  height: 1.5em;
+  /* border: 1px solid black; */
+  justify-content: space-between;
+  /* align-items: center; */
+  /* align-self: center; */
+  align-items: center;
+  /* font-size: 2em; */
+  font-size: 1.4rem;
+}
+.tagCard__btns {
+  display: flex;
+  flex-direction: row;
+}
+.tagCard__url {
+  color: gray;
+  padding: 4px 0;
+}
+.tagCard__tag {
+  padding: 0.5em 0.5em;
+  margin-right: .7em;
+  border: 2px solid  rgb(23, 73, 179);
+  color: rgb(23, 73, 179);
+}
+
+.tagCard__tags {
+  display: flex;
+  flex-direction: row;
+  padding: 0.5em 0 0 0;
+}
