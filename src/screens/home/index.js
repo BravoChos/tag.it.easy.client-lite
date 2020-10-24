@@ -32,7 +32,7 @@ export const Home = () => {
             />
           </div>
           <div className="tagAndTitleWrapper">
-            <div className="bookmarkWrapper">
+            <div className="tagWrapper">
               <div className="label">TAG</div>
               <input
                 className="input"
@@ -53,6 +53,10 @@ export const Home = () => {
                 // onChange={this.props.urlChange}
               />
             </div>
+          </div>
+          <div className="bookmarkWrapper">
+            <div className="label">#YourTags</div>
+            <div className='tag'>IamSuperCool</div>
           </div>
         </div>
 
