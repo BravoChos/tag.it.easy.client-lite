@@ -1,6 +1,7 @@
 import React from "react";
 import { SearchBox } from "../../components/icons";
 import { TagCard } from "../../components/cards";
+import { ListTagCards } from "../../components/listItems";
 import "./index.css";
 export const Home = () => {
   return (
@@ -80,11 +81,10 @@ export const Home = () => {
           <div className="tagCard">sdfsdf</div>
         </div>
         <div className="tagCardWrapper">
-          <TagCard />
-          <TagCard />
-          <TagCard />
+          <ListTagCards />
         </div>
       </div>
     </div>
   );
 };
+// https://github.com/DeepLearnerSC
