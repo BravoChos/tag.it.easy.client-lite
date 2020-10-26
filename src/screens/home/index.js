@@ -1,6 +1,5 @@
 import React from "react";
 import { SearchBox } from "../../components/icons";
-import { TagCard } from "../../components/cards";
 import { ListTagCards } from "../../components/listItems";
 import "./index.css";
 export const Home = () => {
@@ -75,11 +74,61 @@ export const Home = () => {
 
       <div className="tagContainer">
         <div className="tagFilterWrapper">
-          <div className="tagCard">sdfsdf</div>
-          <div className="tagCard">sdfsdf</div>
-          <div className="tagCard">sdfsdf</div>
-          <div className="tagCard">sdfsdf</div>
+          <div className="filter">
+            <div className="filter__sub">
+              <input
+                type="radio"
+                name="orderby"
+                value="recent"
+                checked="checked"
+                // onClick={this.props.handleRadioChange}
+              />
+              <label>Recent</label>
+            </div>
+            <div className="filter__sub">
+              <input
+                type="radio"
+                name="orderby"
+                value="popular"
+                // onClick={this.props.handleRadioChange}
+              />
+
+              <label>Popular</label>
+            </div>
+          </div>
+
+          <div className="subtag">
+            <input
+              type="checkbox"
+              name="checkbox"
+              value="tag"
+              // onClick={this.props.handleRadioChange}
+            />
+
+            <label>Popular (11)</label>
+          </div>
+          <div className="subtag">
+            <input
+              type="checkbox"
+              name="checkbox"
+              value="tag"
+              // onClick={this.props.handleRadioChange}
+            />
+
+            <label>Popular (12)</label>
+          </div>
+          <div className="subtag">
+            <input
+              type="checkbox"
+              name="checkbox"
+              value="tag"
+              // onClick={this.props.handleRadioChange}
+            />
+
+            <label>Popular (1)</label>
+          </div>
         </div>
+
         <div className="tagCardWrapper">
           <ListTagCards />
         </div>
