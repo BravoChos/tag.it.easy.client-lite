@@ -1,8 +1,13 @@
-import React from "react";
+import React, { createContext, useState, memo } from "react";
+import Modal from "react-modal";
 import { SearchBox } from "../../components/icons";
 import { ListTagCards } from "../../components/listItems";
 import "./index.css";
-export const Home = () => {
+export const HomeComponent = memo(() => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const closeModal = () => {
+    setIsOpen(false);
+  };
   return (
     <div className="Container">
       <header className="header">
@@ -130,10 +135,95 @@ export const Home = () => {
         </div>
 
         <div className="tagCardWrapper">
-          <ListTagCards />
+          <ListTagCards setIsOpen={setIsOpen} />
         </div>
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        // onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        // style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+      </Modal>
     </div>
   );
+});
+
+export const Home = () => {
+  return (
+    <HomeProvider>
+      <HomeComponent />
+    </HomeProvider>
+  );
 };
+
 // https://github.com/DeepLearnerSC
+export const HomeContext = createContext();
+
+const HomeProvider = ({ children }) => {
+  const [tagCardList, setTagCardList] = useState([
+    {
+      title: "Song's Github",
+      url: "https://github.com/DeepLearnerSC",
+      tags: ["Code", "Javascript", "Profile"],
+    },
+    {
+      title: "Song's Linked-in",
+      url: "https://www.linkedin.com/in/seonghyun-song-cho-84251654/",
+      tags: ["Profile", "LinkedIn", "Javascript"],
+    },
+    {
+      title: "자바스크립트_스타일 가이드",
+      url: "http://localhost:3000/",
+      tags: ["Javascript", "Docs", "ECMA"],
+    },
+  ]);
+  const [tagList, setTagList] = useState({
+    Code: {
+      date: null,
+      tagName: "Code",
+      count: 1,
+    },
+    Profile: {
+      date: null,
+      tagName: "Profile",
+      count: 2,
+    },
+    Javascript: {
+      date: null,
+      tagName: "Javascript",
+      count: 3,
+    },
+    LinkedIn: {
+      date: null,
+      tagName: "LinkedIn",
+      count: 1,
+    },
+    Docs: {
+      date: null,
+      tagName: "Docs",
+      count: 1,
+    },
+    ECMA: {
+      date: null,
+      tagName: "ECMA",
+      count: 1,
+    },
+  });
+  return (
+    <HomeContext.Provider
+      value={{
+        tagCardList,
+        setTagCardList,
+        tagList,
+        setTagList,
+      }}
+    >
+      {children}
+    </HomeContext.Provider>
+  );
+};

@@ -2,13 +2,13 @@ import React from "react";
 import { DeleteIcon, EditIcon } from "../../icons";
 import "./index.css";
 
-export const TagCard = ({ onPress, item: { url, tags, title } }) => {
+export const TagCard = ({ onPress, item: { url, tags, title }, setIsOpen }) => {
   return (
     <div className="tagCard">
       <div className="tagCard__title">
         <div>{title}</div>
         <div className="tagCard__btns">
-          <EditIcon />
+          <EditIcon onPress={() => setIsOpen(true)} />
           <DeleteIcon onPress={onPress} />
         </div>
       </div>
