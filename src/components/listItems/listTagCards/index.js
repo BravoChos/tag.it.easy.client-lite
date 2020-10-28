@@ -7,7 +7,18 @@ import { HomeContext } from "../../../screens/home";
 export const ListTagCards = (props) => {
   // mobx - fetch Urls from server
 
-  const { tagCardList, setTagCardList } = useContext(HomeContext);
+  const {
+    tagCardList,
+    setTagCardList,
+    currentTagCard,
+    setCurrentTagCard,
+  } = useContext(HomeContext);
+
+  const editCard = (elem, idx) => {
+    console.log("editCard", elem, idx);
+    props.setIsOpen(true);
+    setCurrentTagCard(elem);
+  };
 
   const deleteCard = (idx) => {
     let copy = cloneDeep(tagCardList);
@@ -22,6 +33,7 @@ export const ListTagCards = (props) => {
           <TagCard
             onPress={() => deleteCard(index)}
             setIsOpen={props.setIsOpen}
+            editCard={() => editCard(item, index)}
             item={item}
             key={"tagCard" + index}
           />

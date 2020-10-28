@@ -1,4 +1,7 @@
-import { SearchBox } from "./searchBox";
+import { CancelIcon } from "./cancel";
 import { DeleteIcon } from "./delete";
 import { EditIcon } from "./edit";
-export { SearchBox, DeleteIcon, EditIcon };
+import { SearchBox } from "./searchBox";
+import { SaveIcon } from "./save";
+
+export { CancelIcon, DeleteIcon, EditIcon, SaveIcon, SearchBox };

@@ -2,7 +2,25 @@ import React, { createContext, useState, memo } from "react";
 import Modal from "react-modal";
 import { SearchBox } from "../../components/icons";
 import { ListTagCards } from "../../components/listItems";
+import { EditTagCardInput } from "../../components/inputs";
 import "./index.css";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    height: 300, //280
+    // height:'100%',
+    // right: "auto",
+    // bottom: "auto",
+    // marginRight: "-50%",
+    // margin: 0,
+    padding: 0,
+    // borderWidth: 10,
+    transform: "translate(-50%, -50%)",
+  },
+};
+
 export const HomeComponent = memo(() => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const closeModal = () => {
@@ -143,11 +161,10 @@ export const HomeComponent = memo(() => {
         isOpen={modalIsOpen}
         // onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        // style={customStyles}
+        style={customStyles}
         contentLabel="Example Modal"
       >
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
+        <EditTagCardInput onPress={() => setIsOpen(false)} />
       </Modal>
     </div>
   );
@@ -165,6 +182,7 @@ export const Home = () => {
 export const HomeContext = createContext();
 
 const HomeProvider = ({ children }) => {
+  const [currentTagCard, setCurrentTagCard] = useState({});
   const [tagCardList, setTagCardList] = useState([
     {
       title: "Song's Github",
@@ -221,6 +239,8 @@ const HomeProvider = ({ children }) => {
         setTagCardList,
         tagList,
         setTagList,
+        currentTagCard,
+        setCurrentTagCard,
       }}
     >
       {children}
