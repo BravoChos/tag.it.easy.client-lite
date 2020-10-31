@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
+import cloneDeep from "clone-deep";
 import { DeleteIcon, EditIcon } from "../../icons";
+import { HomeContext } from "../../../screens/home";
 import "./index.css";
 
-export const TagCard = ({ onPress, item: { url, tags, title }, editCard }) => {
+export const TagCard = ({ item: { url, tags, title }, index }) => {
+  const {
+    setIsModalOpen,
+    tagCardList,
+    setTagCardList,
+    setCurrentTagCardIdx,
+  } = useContext(HomeContext);
+
+  const editCard = () => {
+    setIsModalOpen(true);
+    setCurrentTagCardIdx(index);
+  };
+  const deleteCard = () => {
+    let copy = cloneDeep(tagCardList);
+    copy.splice(index, 1);
+    setTagCardList(copy);
+  };
+
   const Tag = ({ innerText }) => {
     return <div className="tagCard__tag"># {innerText}</div>;
   };
@@ -13,7 +32,7 @@ export const TagCard = ({ onPress, item: { url, tags, title }, editCard }) => {
         <div>{title}</div>
         <div className="tagCard__btns">
           <EditIcon onPress={editCard} />
-          <DeleteIcon onPress={onPress} />
+          <DeleteIcon onPress={() => deleteCard()} />
         </div>
       </div>
       <div className="tagCard__url">{url}</div>

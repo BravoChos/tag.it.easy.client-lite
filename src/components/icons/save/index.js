@@ -1,21 +1,21 @@
 import React from "react";
 import "./index.css";
-export const SaveIcon = ({ color, size, onPress }) => {
+export const SaveIcon = ({ color, size, onPress, style }) => {
   const onClick = () => {
     if (onPress) {
       onPress();
     }
   };
-
+  // style={style ? style : null}
   return (
-    <div className="cancel" onClick={onClick}>
+    <div style={style ? style : null} onClick={onClick}>
       <svg
         version="1.1"
         id="Capa_1"
         xmlns="http://www.w3.org/2000/svg"
         // xmlns:xlink="http://www.w3.org/1999/xlink"
-        x="0px"
-        y="0px"
+        height={size ? size : "1.5em"}
+        width={size ? size : "1.5em"}
         viewBox="0 0 512 512"
         // style="enable-background:new 0 0 512 512;"
         // xml:space="preserve"

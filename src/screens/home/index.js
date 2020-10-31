@@ -1,4 +1,4 @@
-import React, { createContext, useState, memo } from "react";
+import React, { createContext, useState, useContext, memo } from "react";
 import Modal from "react-modal";
 import { SearchBox } from "../../components/icons";
 import { ListTagCards } from "../../components/listItems";
@@ -9,25 +9,25 @@ const customStyles = {
   content: {
     top: "50%",
     left: "50%",
-    height: 300, //280
+    height: "22em", //280/
     // height:'100%',
     // right: "auto",
     // bottom: "auto",
     // marginRight: "-50%",
     // margin: 0,
     padding: 0,
+    // flex: 1,
     // borderWidth: 10,
     transform: "translate(-50%, -50%)",
+    // backgroundColor: 'papayawhip'
+    // backgroundColor: 'rgba(52, 52, 52, 0.8)'
   },
 };
 
 export const HomeComponent = memo(() => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+  const { isModalOpen, setIsModalOpen } = useContext(HomeContext);
   return (
-    <div className="Container">
+    <div className={isModalOpen ? "Container" : "Container"}>
       <header className="header">
         <img src={require("../../assets/img/logo.png")} alt="logo" />
 
@@ -153,18 +153,18 @@ export const HomeComponent = memo(() => {
         </div>
 
         <div className="tagCardWrapper">
-          <ListTagCards setIsOpen={setIsOpen} />
+          <ListTagCards />
         </div>
       </div>
 
       <Modal
-        isOpen={modalIsOpen}
+        isOpen={isModalOpen}
         // onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
+        onRequestClose={() => setIsModalOpen(false)}
         style={customStyles}
         contentLabel="Example Modal"
       >
-        <EditTagCardInput onPress={() => setIsOpen(false)} />
+        <EditTagCardInput />
       </Modal>
     </div>
   );
@@ -182,7 +182,8 @@ export const Home = () => {
 export const HomeContext = createContext();
 
 const HomeProvider = ({ children }) => {
-  const [currentTagCard, setCurrentTagCard] = useState({});
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [currentTagCardIdx, setCurrentTagCardIdx] = useState(0);
   const [tagCardList, setTagCardList] = useState([
     {
       title: "Song's Github",
@@ -235,12 +236,14 @@ const HomeProvider = ({ children }) => {
   return (
     <HomeContext.Provider
       value={{
+        isModalOpen,
+        setIsModalOpen,
         tagCardList,
         setTagCardList,
+        currentTagCardIdx,
+        setCurrentTagCardIdx,
         tagList,
         setTagList,
-        currentTagCard,
-        setCurrentTagCard,
       }}
     >
       {children}

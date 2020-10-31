@@ -1,9 +1,18 @@
-.Editor {
-  background-color: rgb(23, 73, 179);
-  border: 1px solid black;
-  padding: 10px;
+.editor {
+  /* background-color: rgb(23, 73, 179); */
+  /* border: 2px solid rgb(23, 73, 179); */
+  padding: 2em;
+  /* height:10em; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-.cancelIcon {
+.editor__title {
+  color: rgb(23, 73, 179);
+  font-size: 1.5em;
+  margin-bottom: .5em;
+}
+.editor__buttons {
   display: flex;
   justify-content: flex-end;
 
@@ -24,10 +33,47 @@
   /* text-align: center; */
   box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.199);
 }
+/* .modal {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 
+} */
+.editor__input {
+  /* width: 90%; */
+  margin: 0.5em 0;
+
+  /* width: 100%; */
+  height: 2.5em;
+  padding: 0 1em;
+}
+
+.editor__tagWrapper {
+  display: flex;
+  flex-direction: row;
+  /* font-size: 1.4em; */
+  margin-top: 0.5em;
+  padding: 4px 8px;
+  align-items: center;
+  border: 3px solid green;
+  border-radius: 2px;
+}
+.editor__label {
+  /* font-size: 1em; */
+  /* border: 3px solid black; */
+  /* color: white; */
+  /* min-width: 2.2em; */
+  /* min-width: 7em; */
+  margin-right: 0.5em;
+  font-weight: 500;
+  /* width: "100%"; */
+  /* padding: 0 .5em 0 0; */
+}
 .tagCard__tag__edit {
   padding: 0.5em 0.5em;
   margin-right: 0.7em;
+  margin-top: 0.5em;
+  background-color: white;
   border: 2px solid rgb(23, 73, 179);
   color: rgb(23, 73, 179);
   display: flex;
