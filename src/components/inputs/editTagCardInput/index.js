@@ -30,6 +30,13 @@ export const EditTagCardInput = (props) => {
     setTagName("");
   };
 
+  const saveTagCard = () => {
+    let copy = cloneDeep(tagCardList);
+    copy[currentTagCardIdx] = input;
+    setTagCardList(copy);
+    setIsModalOpen(false);
+  };
+
   const Tag = ({ innerText, index }) => {
     return (
       <div className="tagCard__tag__edit">
@@ -62,7 +69,11 @@ export const EditTagCardInput = (props) => {
         name="title"
         value={input.title}
         // placeholder="Place your URL here!"
-        // onChange={this.props.urlChange}
+        onChange={(val) => {
+          let copy = cloneDeep(input);
+          copy.title = val.target.value;
+          setInput(copy);
+        }}
       />
 
       <input
@@ -70,8 +81,11 @@ export const EditTagCardInput = (props) => {
         type="text"
         name="url"
         value={input.url}
-        // placeholder="Place your URL here!"
-        // onChange={this.props.urlChange}
+        onChange={(val) => {
+          let copy = cloneDeep(input);
+          copy.url = val.target.value;
+          setInput(copy);
+        }}
       />
       <div className="editor__tagWrapper">
         <div className="editor__label">TAG</div>
@@ -79,7 +93,7 @@ export const EditTagCardInput = (props) => {
         <input
           className="input"
           type="text"
-          // name="url"
+          name="tag"
           placeholder="Add Tag"
           value={tagName}
           onChange={(val) => setTagName(val.target.value)}
@@ -96,6 +110,7 @@ export const EditTagCardInput = (props) => {
             display: "flex",
             flexDirection: "column",
           }}
+          onPress={saveTagCard}
         />
         <CancelIcon
           onPress={() => setIsModalOpen(false)}
