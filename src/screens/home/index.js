@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext, memo } from "react";
 import Modal from "react-modal";
 import { SearchBox } from "../../components/icons";
 import { ListTagCards } from "../../components/listItems";
-import { CreateTagCard, EditTagCardInput } from "../../components/inputs";
+import { CreateTagCardInput, EditTagCardInput } from "../../components/inputs";
 import "./index.css";
 
 const customStyles = {
@@ -43,7 +43,7 @@ export const HomeComponent = memo(() => {
         </div>
       </header>
 
-      <CreateTagCard />
+      <CreateTagCardInput />
 
       <div className="tagContainer">
         <div className="tagFilterWrapper">

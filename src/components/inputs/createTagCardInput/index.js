@@ -4,7 +4,7 @@ import "./index.css";
 import { CancelIcon, SaveIcon } from "../../icons";
 // import { HomeContext } from "../../../screens/home";
 import { HomeContext } from "../../../screens/home";
-export const CreateTagCard = (props) => {
+export const CreateTagCardInput = (props) => {
   const {
     // currentTagCard,
     setIsModalOpen,

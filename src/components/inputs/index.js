@@ -1,3 +1,3 @@
-import { CreateTagCard } from "./createTagCard";
+import { CreateTagCardInput } from "./createTagCardInput";
 import { EditTagCardInput } from "./editTagCardInput";
-export { CreateTagCard, EditTagCardInput };
+export { CreateTagCardInput, EditTagCardInput };
