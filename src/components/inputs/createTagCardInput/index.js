@@ -12,11 +12,19 @@ export const CreateTagCardInput = (props) => {
     setCurrentTagCardIdx,
     tagCardList,
     setTagCardList,
+    tagList,
+    setTagList,
+    _updateTagList,
   } = useContext(HomeContext);
 
   // const currentTagCard = tagCardList[currentTagCardIdx];
 
-  const [input, setInput] = useState({ title: null, url: null, tags: [] });
+  const [input, setInput] = useState({
+    title: null,
+    url: null,
+    tags: [],
+    // date: null,
+  });
   const [tagName, setTagName] = useState("");
   console.log("kinda magic2", currentTagCardIdx);
 
@@ -113,12 +121,18 @@ export const CreateTagCardInput = (props) => {
         className="save__button"
         onClick={() => {
           // this.props.submitNewURL();
-          console.log("hi");
           let copy = cloneDeep(tagCardList);
-          copy.push(input);
-          // tagCardList, setTagCardList, setInput({});
+          let copyInput = cloneDeep(input);
+          copyInput.date = new Date().getTime();
+          copy.push(copyInput);
+          console.log("hi", copy);
+
           setTagCardList(copy);
-          setInput({ title: "", url: "", tags: [] });
+          setInput({
+            title: "",
+            url: "",
+            tags: [],
+          });
           setTagName("");
         }}
       >
