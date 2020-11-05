@@ -113,7 +113,7 @@
   justify-content: center;
   /* align-self: center */
   /* height: 4em; */
-  /* padding: 10px; */
+  padding: 5px;
   /* border: 1px solid black; */
 }
 .filter__sub label {
@@ -122,7 +122,7 @@
 .filter__sub input {
   /* border: 10px solid red; */
   /* padding: 5px; */
-  margin: 2px 0;
+  /* margin: 2px 0; */
   /* background-color: red; */
 }
 /* .subTagWrapper {

@@ -32,18 +32,19 @@ const customStyles = {
 
 export const HomeComponent = memo(() => {
   const { isModalOpen, setIsModalOpen, tagList } = useContext(HomeContext);
-  // console.log(tagList);
-  let test = Object.keys(tagList);
-  console.log(test);
 
+  let test = Object.keys(tagList);
+
+  const [sortKey, setSortKey] = useState("recent");
   let newArray = test
     .map((item) => {
       return tagList[item];
     })
     .sort((a, b) => {
-      return b.date - a.date;
+      if (sortKey === "sortKey") return b.date - a.date;
+      else if (sortKey === "popular") return b.count - a.count;
     });
-  console.log(newArray);
+
   return (
     <div className={isModalOpen ? "Container" : "Container"}>
       <header className="header">
@@ -70,9 +71,12 @@ export const HomeComponent = memo(() => {
               <input
                 type="radio"
                 name="orderby"
-                value="recent"
-                checked="checked"
-                // onClick={this.props.handleRadioChange}
+                // value="recent"
+                checked={sortKey === "recent" ? "recent" : null}
+                onClick={() => {
+                  console.log("recent");
+                  setSortKey("recent");
+                }}
               />
               <label>Recent</label>
             </div>
@@ -80,8 +84,12 @@ export const HomeComponent = memo(() => {
               <input
                 type="radio"
                 name="orderby"
-                value="popular"
-                // onClick={this.props.handleRadioChange}
+                // value="popular"
+                checked={sortKey === "popular" ? "recent" : null}
+                onClick={() => {
+                  console.log("popular");
+                  setSortKey("popular");
+                }}
               />
 
               <label>Popular</label>
