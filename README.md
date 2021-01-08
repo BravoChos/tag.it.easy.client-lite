@@ -26,4 +26,4 @@ This repository is still in progress.
 
 ## Special Thanks
 
-Logo design by **Suemin Jeaong** with brand new ipad within 10minutes.
+Logo design by **Suemin Jeong** with brand new ipad within 10minutes.
