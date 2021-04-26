@@ -1,5 +1,7 @@
 # tag-it-easy-client
 
+- [tag-it-easy](https://deeplearnersc.github.io/tag.it.easy.client-lite) - It's deployed here!
+
 ## About
 
 "Tag-it-easy" is a customizable bookmark service with multiple tags. Bookmarks can be searched based on tag's keyword, and it can be sorted/filtered based on registered time and its count.
