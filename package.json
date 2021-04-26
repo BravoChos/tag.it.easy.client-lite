@@ -2,7 +2,7 @@
   "name": "tag-it-easy-client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://deeplearnersc.github.io/tag.it.easy.client-lite",
+  "homepage": "https://DeepLearnerSC.github.io/tag.it.easy.client-lite",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
