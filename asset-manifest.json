@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/tag.it.easy.client-lite/static/css/main.8d64b04c.chunk.css",
+    "main.js": "/tag.it.easy.client-lite/static/js/main.1c43cbcb.chunk.js",
+    "main.js.map": "/tag.it.easy.client-lite/static/js/main.1c43cbcb.chunk.js.map",
+    "runtime-main.js": "/tag.it.easy.client-lite/static/js/runtime-main.4dcebd25.js",
+    "runtime-main.js.map": "/tag.it.easy.client-lite/static/js/runtime-main.4dcebd25.js.map",
+    "static/js/2.2a5b5b4b.chunk.js": "/tag.it.easy.client-lite/static/js/2.2a5b5b4b.chunk.js",
+    "static/js/2.2a5b5b4b.chunk.js.map": "/tag.it.easy.client-lite/static/js/2.2a5b5b4b.chunk.js.map",
+    "index.html": "/tag.it.easy.client-lite/index.html",
+    "precache-manifest.6814177522fc2c56041ff321998f3bc1.js": "/tag.it.easy.client-lite/precache-manifest.6814177522fc2c56041ff321998f3bc1.js",
+    "service-worker.js": "/tag.it.easy.client-lite/service-worker.js",
+    "static/css/main.8d64b04c.chunk.css.map": "/tag.it.easy.client-lite/static/css/main.8d64b04c.chunk.css.map",
+    "static/js/2.2a5b5b4b.chunk.js.LICENSE.txt": "/tag.it.easy.client-lite/static/js/2.2a5b5b4b.chunk.js.LICENSE.txt",
+    "static/media/logo.png": "/tag.it.easy.client-lite/static/media/logo.f6a534b1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4dcebd25.js",
+    "static/js/2.2a5b5b4b.chunk.js",
+    "static/css/main.8d64b04c.chunk.css",
+    "static/js/main.1c43cbcb.chunk.js"
+  ]
+}
